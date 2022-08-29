@@ -81,32 +81,32 @@ WHERE
 	<columnHeader>
 		<band height="26" splitType="Stretch">
 			<staticText>
-				<reportElement uuid="f46626cd-61ee-4863-9f5c-466c5b94aa45" style="Column header" x="0" y="7" width="138" height="18" forecolor="#000000"/>
+				<reportElement uuid="f46626cd-61ee-4863-9f5c-466c5b94aa45" style="Column header" x="0" y="7" width="44" height="18" forecolor="#000000"/>
 				<textElement>
 					<font isBold="false"/>
 				</textElement>
-				<text><![CDATA[id]]></text>
+				<text><![CDATA[No]]></text>
 			</staticText>
 			<staticText>
-				<reportElement uuid="488cebbc-8f1f-4fb3-a255-b084a4ccecc8" style="Column header" x="138" y="7" width="138" height="18" forecolor="#000000"/>
+				<reportElement uuid="488cebbc-8f1f-4fb3-a255-b084a4ccecc8" style="Column header" x="44" y="7" width="232" height="18" forecolor="#000000"/>
 				<textElement>
 					<font isBold="false"/>
 				</textElement>
-				<text><![CDATA[detail]]></text>
+				<text><![CDATA[Detail]]></text>
 			</staticText>
 			<staticText>
 				<reportElement uuid="8a74e0e2-4870-4353-b35a-7e69ecd95fec" style="Column header" x="276" y="7" width="138" height="18" forecolor="#000000"/>
 				<textElement>
 					<font isBold="false"/>
 				</textElement>
-				<text><![CDATA[total]]></text>
+				<text><![CDATA[Total]]></text>
 			</staticText>
 			<staticText>
 				<reportElement uuid="87dd6462-7f82-4cd2-a501-0c1d5ab8a18d" style="Column header" x="414" y="7" width="138" height="18" forecolor="#000000"/>
 				<textElement>
 					<font isBold="false"/>
 				</textElement>
-				<text><![CDATA[tglBuat]]></text>
+				<text><![CDATA[Tgl Buat]]></text>
 			</staticText>
 		</band>
 	</columnHeader>
@@ -115,18 +115,11 @@ WHERE
 			<frame>
 				<reportElement uuid="ccf45ed6-fc4e-4f48-81a5-e5e823e5fb9e" style="Row" mode="Opaque" x="0" y="0" width="555" height="18"/>
 				<textField isStretchWithOverflow="true">
-					<reportElement uuid="69d3590d-12d4-47c9-bd40-9264373b3932" style="Detail" positionType="Float" x="0" y="0" width="138" height="18"/>
+					<reportElement uuid="69d3590d-12d4-47c9-bd40-9264373b3932" style="Detail" positionType="Float" x="0" y="0" width="44" height="18"/>
 					<textElement>
 						<font size="14"/>
 					</textElement>
 					<textFieldExpression><![CDATA[$F{id}]]></textFieldExpression>
-				</textField>
-				<textField isStretchWithOverflow="true">
-					<reportElement uuid="de3773a5-e7c9-4c7b-8906-a56d259307b5" style="Detail" positionType="Float" x="138" y="0" width="138" height="18"/>
-					<textElement>
-						<font size="14"/>
-					</textElement>
-					<textFieldExpression><![CDATA[$F{detail}]]></textFieldExpression>
 				</textField>
 				<textField isStretchWithOverflow="true">
 					<reportElement uuid="95435eea-8f53-4e94-a898-a1e7c4332d14" style="Detail" positionType="Float" x="276" y="0" width="138" height="18"/>
@@ -141,6 +134,13 @@ WHERE
 						<font size="14"/>
 					</textElement>
 					<textFieldExpression><![CDATA[$F{tglBuat}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement uuid="de3773a5-e7c9-4c7b-8906-a56d259307b5" style="Detail" positionType="Float" x="44" y="0" width="232" height="18"/>
+					<textElement>
+						<font size="14"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{detail}]]></textFieldExpression>
 				</textField>
 			</frame>
 		</band>
