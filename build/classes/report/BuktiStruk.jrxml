@@ -1,0 +1,325 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="c932d065-2675-4d70-9af9-c65186b1c64a">
+	<property name="ireport.zoom" value="1.2100000000000013"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<style name="Title" forecolor="#FFFFFF" fontName="Times New Roman" fontSize="50" isBold="false" pdfFontName="Times-Bold"/>
+	<style name="SubTitle" forecolor="#CCCCCC" fontName="Times New Roman" fontSize="18" isBold="false" pdfFontName="Times-Roman"/>
+	<style name="Column header" forecolor="#666666" fontName="Times New Roman" fontSize="14" isBold="true" pdfFontName="Times-Roman"/>
+	<style name="Detail" mode="Transparent" fontName="Times New Roman" pdfFontName="Times-Roman"/>
+	<style name="Row" mode="Transparent" fontName="Times New Roman" pdfFontName="Times-Roman">
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$V{REPORT_COUNT}%2 == 0]]></conditionExpression>
+			<style mode="Opaque" backcolor="#F0EFEF"/>
+		</conditionalStyle>
+	</style>
+	<queryString language="SQL">
+		<![CDATA[SELECT
+	laundry.idLaundry, 
+	pelanggan.nama, 
+	pelanggan.telp, 
+	laundry.service, 
+	laundry.jenis, 
+	laundry.mass, 
+	laundry.qty, 
+	laundry.tglBuat, 
+	laundry.tglAmbil, 
+	pembayaran.biaya, 
+	pembayaran.`status`
+FROM
+	pelanggan
+	INNER JOIN
+	laundry
+	ON 
+		pelanggan.idPlg = laundry.idPlg
+	INNER JOIN
+	pembayaran
+	ON 
+		laundry.idPlg = pembayaran.idPlg AND
+		laundry.idLaundry = pembayaran.idLaundry AND
+		pelanggan.idPlg = pembayaran.idPlg
+WHERE
+	laundry.idLaundry = 'LDR-1']]>
+	</queryString>
+	<field name="idLaundry" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="nama" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="telp" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="service" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="jenis" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="mass" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="qty" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="tglBuat" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="tglAmbil" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="biaya" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="status" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="177" splitType="Stretch">
+			<image isLazy="true">
+				<reportElement uuid="95a38f95-1f8d-4ac1-94c4-bf0c09bfd447" x="2" y="0" width="122" height="121"/>
+				<imageExpression><![CDATA["https://drive.google.com/uc?export=view&id=17Qf1r27EcwrbM-eaNSfdPfdDr4ZK-Vof"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement uuid="9d8b1733-5afb-4f93-897a-74d84464c5af" x="124" y="97" width="422" height="24"/>
+				<textElement>
+					<font fontName="SansSerif" size="15" isBold="true" isItalic="true"/>
+				</textElement>
+				<text><![CDATA[Bukti Struk Laundry]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="ffe9ea85-9b80-4140-9e7b-8a72b0394338" x="125" y="73" width="421" height="24"/>
+				<textElement>
+					<font size="12" isBold="false" isItalic="true"/>
+				</textElement>
+				<text><![CDATA[+62 852-1691-4560]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="1a1938f0-91f8-48dd-9955-647bca05b810" x="124" y="40" width="423" height="33"/>
+				<textElement>
+					<font size="12" isBold="false" isItalic="true"/>
+				</textElement>
+				<text><![CDATA[Jl. Warung Buncit Raya No.48, RT.8/RW.5, Kalibata, Kec. Pancoran, Kota Jakarta Selatan, Daerah Khusus Ibukota Jakarta 12510]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="9d8b1733-5afb-4f93-897a-74d84464c5af" x="124" y="0" width="422" height="40"/>
+				<textElement>
+					<font fontName="SansSerif" size="26" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Ceria Laundry]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="208" splitType="Stretch">
+			<staticText>
+				<reportElement uuid="2bf2c8d5-5da5-4aa0-81cd-41e5426e1ff7" style="Column header" x="2" y="18" width="79" height="18" forecolor="#000000"/>
+				<textElement>
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[No. Laundry]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="125b3124-e23b-4392-851c-a50936f4d623" style="Column header" x="0" y="36" width="103" height="18" forecolor="#000000"/>
+				<textElement>
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[Nama Pelanggan]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="fcd02bbd-5958-405a-ad9e-f3a78cfe54d1" style="Column header" x="0" y="55" width="50" height="18" forecolor="#000000"/>
+				<textElement>
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[No Telp]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="74028ead-77fc-4fb9-87d8-761a8c7806e8" style="Column header" x="0" y="73" width="66" height="18" forecolor="#000000"/>
+				<textElement>
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[Pelayanan]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="28ccec41-ee46-42d3-ac17-2c63b0ae89e8" style="Column header" x="0" y="91" width="92" height="18" forecolor="#000000"/>
+				<textElement>
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[Jenis Laundry]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="151bbf29-11a5-4e4b-bc7d-6b685f46eb08" style="Column header" x="0" y="109" width="94" height="18" forecolor="#000000"/>
+				<textElement>
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[Total Berat]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="2a59cf27-e3aa-480d-9095-af944c46cf70" style="Column header" x="0" y="127" width="92" height="18" forecolor="#000000"/>
+				<textElement>
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[Total Jumlah]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="370033b3-46e6-46c2-aef5-3c8f4c06939d" style="Column header" x="278" y="18" width="100" height="18" forecolor="#000000"/>
+				<textElement>
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[Tanggal Dibuat]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="8c731379-350a-4fa9-9406-2aa9d61152a2" style="Column header" x="278" y="54" width="100" height="18" forecolor="#000000"/>
+				<textElement>
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[Tanggal Ambil]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="7a8d8cfb-87d3-4868-93c3-f90786b8e38c" style="Column header" x="0" y="180" width="103" height="18" forecolor="#000000"/>
+				<textElement>
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[Total Dibayar]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="45c98a4e-fced-425d-a1dc-4430ea245021" style="Column header" x="278" y="91" width="50" height="18" forecolor="#000000"/>
+				<textElement>
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[Status]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true">
+				<reportElement uuid="dd516b0a-f03d-40ac-ad12-b52cbf71d051" style="Detail" positionType="Float" x="125" y="18" width="135" height="18"/>
+				<textElement>
+					<font size="14" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{idLaundry}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement uuid="cf0196c0-fd7e-41d4-8531-815a5049e702" style="Detail" positionType="Float" x="125" y="37" width="135" height="18"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{nama}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement uuid="354c0a9a-2d86-4eb2-bb6b-bd6aa8c3b52d" style="Detail" positionType="Float" x="125" y="55" width="135" height="18"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{telp}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement uuid="dc9cf68b-e9e4-420e-aee0-6e361b166ef7" style="Detail" positionType="Float" x="125" y="73" width="135" height="18"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{service}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement uuid="ad5d5ea9-f2be-4e2f-af6b-fa8dee2841f2" style="Detail" positionType="Float" x="125" y="91" width="135" height="18"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{jenis}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement uuid="e8547b19-d50d-4440-8432-9565da8e99bc" style="Detail" positionType="Float" x="125" y="109" width="135" height="18"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{mass}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement uuid="bedcdec5-6c32-4302-941c-983eb3331cb8" style="Detail" positionType="Float" x="125" y="127" width="135" height="18"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{qty}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement uuid="1da4220e-c97c-4be6-ba67-1de2ed8e766c" style="Detail" positionType="Float" x="391" y="18" width="155" height="18"/>
+				<textElement>
+					<font size="14" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{tglBuat}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement uuid="60486e88-d6a8-4d64-8ca3-0dfe486df583" style="Detail" positionType="Float" x="391" y="54" width="155" height="18"/>
+				<textElement>
+					<font size="14" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{tglAmbil}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement uuid="a39ef017-e0aa-4d7b-8d2e-5ae03a0e4eaa" style="Detail" positionType="Float" x="125" y="180" width="135" height="18"/>
+				<textElement>
+					<font size="14" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{biaya}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement uuid="0e6d2937-e192-406b-84b7-f3f3cc2a50c6" style="Detail" positionType="Float" x="391" y="91" width="155" height="18"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{status}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="7" splitType="Stretch">
+			<line>
+				<reportElement uuid="11dc0ba7-db8c-4c10-b878-412f3410b066" positionType="FixRelativeToBottom" x="0" y="3" width="555" height="1"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="148" splitType="Stretch">
+			<staticText>
+				<reportElement uuid="c4245620-cf6a-4053-b19c-78112b39499a" x="359" y="109" width="86" height="20"/>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Ceria Laundry]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="c4245620-cf6a-4053-b19c-78112b39499a" x="320" y="14" width="38" height="20"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<text><![CDATA[Jakarta,]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="c4245620-cf6a-4053-b19c-78112b39499a" x="372" y="34" width="58" height="20"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<text><![CDATA[( Manajer )]]></text>
+			</staticText>
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement uuid="914a09c5-eebd-4d39-8706-0a71aa464a95" style="Column header" x="359" y="14" width="166" height="20" forecolor="#000000"/>
+				<textElement verticalAlignment="Middle">
+					<font size="12" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new SimpleDateFormat("EEEE, dd MMMM yyyy", new java.util.Locale("id")).format(new Date())]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>
