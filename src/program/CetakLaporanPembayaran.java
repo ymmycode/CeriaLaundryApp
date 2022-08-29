@@ -68,20 +68,26 @@ public class CetakLaporanPembayaran extends javax.swing.JInternalFrame {
             
             
             sql = "SELECT\n" +
-                    "pesan.idPesanan,\n" +
-                    "pesan.tanggal,\n" +
-                    "pesan.nama,\n" +
-                    "pesan.noktp,\n" +
-                    "pesan.alamat,\n" +
-                    "pesan.notelp,\n" +
-                    "pesan.kodeSepeda,\n" +
-                    "bayar.`status`\n" +
+                    "	pelanggan.idPlg, \n" +
+                    "	pelanggan.nama, \n" +
+                    "	pembayaran.idLaundry, \n" +
+                    "	pembayaran.biaya, \n" +
+                    "	pembayaran.`status`, \n" +
+                    "	laundry.tglBuat\n" +
                     "FROM\n" +
-                    "pesan ,\n" +
-                    "bayar\n" +
+                    "	laundry\n" +
+                    "	INNER JOIN\n" +
+                    "	pelanggan\n" +
+                    "	ON \n" +
+                    "		laundry.idPlg = pelanggan.idPlg\n" +
+                    "	INNER JOIN\n" +
+                    "	pembayaran\n" +
+                    "	ON \n" +
+                    "		laundry.idPlg = pembayaran.idPlg AND\n" +
+                    "		laundry.idLaundry = pembayaran.idLaundry AND\n" +
+                    "		pelanggan.idPlg = pembayaran.idPlg\n" +
                     "WHERE\n" +
-                    "pesan.idPesanan = bayar.idPesanan AND\n" +
-                    "pesan.tanggal LIKE '%"+nowTime+"%'";
+                    "	laundry.tglBuat LIKE '%"+nowTime+"%'";
             JRDesignQuery newQuery = new JRDesignQuery();
             newQuery.setText(sql);
             jd1.setQuery(newQuery);
