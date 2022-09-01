@@ -377,7 +377,7 @@ public class Dashboard extends javax.swing.JFrame {
 
     private void jMenuItem10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem10ActionPerformed
         // TODO add your handling code here:
-        ListLaundry frm = new ListLaundry();
+        ListPembayaran frm = new ListPembayaran();
         jDesktopPane1.add(frm);
         frm.setVisible(true);
         frm.setLocation(jDesktopPane1.getWidth()/2-frm.getWidth()/2, jDesktopPane1.getHeight()/2-frm.getHeight()/2);

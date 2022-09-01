@@ -254,10 +254,10 @@ public class ListPembayaran extends javax.swing.JInternalFrame {
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
-        //        LaporanMobil frm = new LaporanMobil();
-        //        getParent().add(frm);
-        //        frm.setVisible(true);
-        //        frm.setLocation(getParent().getWidth()/2-frm.getWidth()/2, getParent().getHeight()/2-frm.getHeight()/2);
+                LaporanPembayaran frm = new LaporanPembayaran();
+                getParent().add(frm);
+                frm.setVisible(true);
+                frm.setLocation(getParent().getWidth()/2-frm.getWidth()/2, getParent().getHeight()/2-frm.getHeight()/2);
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed

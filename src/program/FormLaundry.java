@@ -394,6 +394,11 @@ public class FormLaundry extends javax.swing.JInternalFrame {
         jButton4.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/icons8_cash_in_hand_32px.png"))); // NOI18N
         jButton4.setText("Form Pembayaran");
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton4ActionPerformed(evt);
+            }
+        });
 
         jLabel21.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel21.setText("Pilih Jenis Laundry");
@@ -1033,6 +1038,14 @@ public class FormLaundry extends javax.swing.JInternalFrame {
         String total = Integer.toString(Integer.parseInt(jLabel9.getText()) * Integer.parseInt(jTextField3.getText()));
         jLabel20.setText(total);
     }//GEN-LAST:event_jTextField3KeyReleased
+
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+        // TODO add your handling code here:
+                FormPembayaran frm = new FormPembayaran();
+                getParent().add(frm);
+                frm.setVisible(true);
+                frm.setLocation(getParent().getWidth()/2-frm.getWidth()/2, getParent().getHeight()/2-frm.getHeight()/2);
+    }//GEN-LAST:event_jButton4ActionPerformed
 
     private void ClearData()
     {
